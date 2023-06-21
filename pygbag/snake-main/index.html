@@ -80,9 +80,7 @@ async def custom_site():
     pygame.init()
     pygame.font.init()
 
-    screen = pygame.display.set_mode([ux(.50),uy(.50)], pygame.SRCALPHA, 32
-    screen.set_colorkey( (0,0,0,0), pygame.RLEACCEL )
-    screen.fill( (0,0,0,0) )
+    screen = pygame.display.set_mode( ( 320 , 240 ) , pygame.RESIZABLE )
 
     compose()
 
