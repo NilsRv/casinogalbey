@@ -80,7 +80,8 @@
         pygame.init()
         pygame.font.init()
     
-        screen = pygame.display.set_mode([ux(.50),uy(.50)], pygame.SRCALPHA, 32)
+        #screen = pygame.display.set_mode([ux(.50),uy(.50)], pygame.SRCALPHA, 32)
+        screen = pygame.display.set_mode((800,600))
         screen.set_colorkey( (0,0,0,0), pygame.RLEACCEL )
         screen.fill( (0,0,0,0) )
     
