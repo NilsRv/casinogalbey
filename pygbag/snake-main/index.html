@@ -1,25 +1,10 @@
 <html lang="en-us">
 <head>
     <h1>Snake</h1>
-    <style>
-        .box {
-            width: 800px;
-            height: 800px;
-            border: 1px solid black;
-            padding: 10px;
-            overflow: auto;
-        }
-    </style>
-
 </head>
 
 <body>
-    <div class="box">
-        <pre>
-            <code id="site"></code>
-        </pre>
-    </div>
-    
+
     <script src="https://pygame-web.github.io/pygbag/0.0/pythons.js" type=module id="site" data-os="vtx,fs,snd,gui" async defer>#<!--
     
     print("""
@@ -95,7 +80,7 @@
         pygame.init()
         pygame.font.init()
     
-        screen = pygame.display.set_mode([ux(.100),uy(.100)], pygame.SRCALPHA, 32)
+        screen = pygame.display.set_mode([ux(.50),uy(.50)], pygame.SRCALPHA, 32)
         screen.set_colorkey( (0,0,0,0), pygame.RLEACCEL )
         screen.fill( (0,0,0,0) )
     
