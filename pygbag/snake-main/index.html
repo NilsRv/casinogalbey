@@ -1,13 +1,11 @@
-<html lang="en-us">
-
-<script src="https://pygame-web.github.io/pygbag/0.0/pythons.js" type=module id="site" data-os="vtx,fs,snd,gui" async defer>#<!--
+<html lang="en-us"><script src="https://pygame-web.github.io/archives/0.7/pythons.js" type=module id="site" data-os="vtx,fs,snd,gui" async defer>#<!--
 
 print("""
 Loading snake-main from snake-main.apk
-    Pygbag Version : 0.0.0
+    Pygbag Version : 0.7.1
     Template Version : 0.7.0
     Python  : 3.11
-    CDN URL : https://pygame-web.github.io/pygbag/0.0/
+    CDN URL : https://pygame-web.github.io/archives/0.7/
     Screen  : {{cookiecutter.width}}x{{cookiecutter.height}}
     Title   : snake-main
     Folder  : snake-main
@@ -18,11 +16,11 @@ Loading snake-main from snake-main.apk
 
 
 # screen pixels (real, hardware)
-WIDTH=1920 # {{cookiecutter.width}}
-HEIGHT=1080  # {{cookiecutter.height}}
+WIDTH=1024 # {{cookiecutter.width}}
+HEIGHT=600  # {{cookiecutter.height}}
 
 # reference/idealized screen pixels
-REFX = 1920
+REFX = 1980
 REFY = 1080
 
 def u(real, ref, v):
@@ -75,7 +73,9 @@ async def custom_site():
     pygame.init()
     pygame.font.init()
 
-    screen = pygame.display.set_mode( ( 320 , 320 ) , RESIZABLE )
+    screen = pygame.display.set_mode([ux(.100),uy(.100)], pygame.SRCALPHA, 32)
+    screen.set_colorkey( (0,0,0,0), pygame.RLEACCEL )
+    screen.fill( (0,0,0,0) )
 
     compose()
 
@@ -241,7 +241,7 @@ config = {
     can_close : 0,
     archive : "snake-main",
     gui_debug : 3,
-    cdn : "https://pygame-web.github.io/pygbag/0.0/",
+    cdn : "https://pygame-web.github.io/archives/0.7/",
     autorun : 0,
     PYBUILD : "3.11"
 }
@@ -256,10 +256,10 @@ config = {
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes"/>
 
-    <link rel="prefetch" href="https://pygame-web.github.io/pygbag/0.0/pythonrc.py">
-    <link rel="prefetch" href="https://pygame-web.github.io/pygbag/0.0/vt/xterm.js">
-    <link rel="prefetch" href="https://pygame-web.github.io/pygbag/0.0/vt/xterm-addon-image.js">
-    <link rel="prefetch" href="https://pygame-web.github.io/pygbag/0.0/vt/xterm-addon-image.js">
+    <link rel="prefetch" href="https://pygame-web.github.io/archives/0.7/pythonrc.py">
+    <link rel="prefetch" href="https://pygame-web.github.io/archives/0.7/vt/xterm.js">
+    <link rel="prefetch" href="https://pygame-web.github.io/archives/0.7/vt/xterm-addon-image.js">
+    <link rel="prefetch" href="https://pygame-web.github.io/archives/0.7/vt/xterm-addon-image.js">
 
 
     <link rel="icon" type="image/png" href="favicon.png" sizes="16x16">
@@ -341,7 +341,7 @@ config = {
         }
     </style>
 
-    <script src="https://pygame-web.github.io/pygbag/0.0//browserfs.min.js"></script>
+    <script src="https://pygame-web.github.io/archives/0.7//browserfs.min.js"></script>
 
 </head>
 
@@ -401,7 +401,7 @@ frameborder="1"
                 mozallowfullscreen="true"
                 sandbox="allow-same-origin allow-top-navigation allow-scripts allow-pointer-lock"
                 allow="autoplay; fullscreen *; geolocation; microphone; camera; midi; monetization; xr-spatial-tracking; gamepad; gyroscope; accelerometer; xr; cross-origin-isolated"
-                src="https://pygame-web.github.io/pygbag/0.0/empty.html"
+                src="https://pygame-web.github.io/archives/0.7/empty.html"
                 scrolling="yes">
             </iframe>
         </div>
