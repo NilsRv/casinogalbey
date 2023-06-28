@@ -1,23 +1,28 @@
 <html lang="en-us"><script src="https://pygame-web.github.io/archives/0.7/pythons.js" type=module id="site" data-os="vtx,fs,snd,gui" async defer>#<!--
 
 print("""
-Loading snake-main from snake-main.apk
+Loading flappy-bird-main from flappy-bird-main.apk
     Pygbag Version : 0.7.1
     Template Version : 0.7.0
     Python  : 3.11
     CDN URL : https://pygame-web.github.io/archives/0.7/
     Screen  : {{cookiecutter.width}}x{{cookiecutter.height}}
-    Title   : snake-main
-    Folder  : snake-main
+    Title   : flappy-bird-main
+    Folder  : flappy-bird-main
     Authors : pgw
     SPDX-License-Identifier: cookiecutter.spdx
+
 """)
+
+
 # screen pixels (real, hardware)
-WIDTH=1024 # {{cookiecutter.width}}
+WIDTH=1024  # {{cookiecutter.width}}
 HEIGHT=600  # {{cookiecutter.height}}
+
 # reference/idealized screen pixels
 REFX = 1980
 REFY = 1080
+
 def u(real, ref, v):
     if abs(v)<0.9999999:
         result = int( (float(real)/100.0) * (v*1000))
@@ -25,48 +30,66 @@ def u(real, ref, v):
             return real-result
         return result
     return int( (real/ref) * v )
+
 def ux(*argv):
     global WIDTH, REFX
     acc = 0
     for v in argv:
         acc += u(WIDTH, REFX, v)
     return acc
+
 def uy(*argv):
     global HEIGHT, REFY
     acc = 0
     for v in argv:
         acc += u(HEIGHT, REFY, v)
     return acc
+
+
+
+
 # do not rename
 async def custom_site():
+
     import sys
     import asyncio
     import platform
     import json
     from pathlib import Path
+
+
+
     import embed
+
+
     platform.document.body.style.background = "#7f7f7f"
+
     import pygame
+
     def compose():
         pygame.display.update()
         window.chromakey(None, *screen.get_colorkey(), 40)
+
     pygame.init()
     pygame.font.init()
+
     screen = pygame.display.set_mode([ux(.100),uy(.100)], pygame.SRCALPHA, 32)
     screen.set_colorkey( (0,0,0,0), pygame.RLEACCEL )
     screen.fill( (0,0,0,0) )
+
     compose()
+
     platform.window.transfer.hidden = true
     platform.window.canvas.style.visibility = "visible"
 
 
 
-    apk = "snake-main.apk"
+    apk = "flappy-bird-main.apk"
 
-    bundle = "snake-main"
+    bundle = "flappy-bird-main"
 
     # the C or js loader could do that but be explicit.
-    appdir = Path(f"/data/data/{bundle}") # /data/data/snake-main
+    appdir = Path(f"/data/data/{bundle}") # /data/data/flappy-bird-main
     appdir.mkdir()
 
 
@@ -197,9 +220,11 @@ asyncio.run( custom_site() )
 //
 //
 //
+
     {%- if cookiecutter.comment != "" -%}
 {{cookiecutter.comment}}
     {% endif %}
+
 --><script type="application/javascript">
 // END BLOCK
 
@@ -214,7 +239,7 @@ config = {
     user_canvas_managed : 0,
     ume_block : 1,
     can_close : 0,
-    archive : "snake-main",
+    archive : "flappy-bird-main",
     gui_debug : 3,
     cdn : "https://pygame-web.github.io/archives/0.7/",
     autorun : 0,
@@ -223,7 +248,7 @@ config = {
 
 </script>
 
-    <title>snake-main</title>
+    <title>flappy-bird-main</title>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -448,7 +473,7 @@ frameborder="1"
         window.frames["iframe"].location = url;
     }
 
-</script>
+    </script>
 
 </body>
 </html>
